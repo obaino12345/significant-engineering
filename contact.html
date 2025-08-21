@@ -1,0 +1,204 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Significant Engineering Designing Company</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', 'Montserrat', 'Inter', sans-serif;
+      background: url("assets/images/engineering-bg.jpg") no-repeat center center;
+      background-size: cover;       /* Makes background responsive */
+      background-attachment: fixed; /* Keeps it nice on desktop */
+      color: #F5F5F5;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(13, 17, 23, 0.9);
+      z-index: -1;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(13, 17, 23, 0.95);
+      border-bottom: 1px solid #1A2E25;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    header .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; color: #00FF84; }
+    header .logo img { width: 45px; height: 45px; }
+    header .logo span { display: flex; flex-direction: column; line-height: 1.2; font-size: 1rem; }
+
+    nav { position: relative; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul li a { color: #F5F5F5; font-weight: 500; transition: color 0.3s; }
+    nav ul li a.active { color: #00FF84; font-weight: 700; }
+    nav ul li a:hover { color: #00FF84; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger div { width: 25px; height: 3px; background: #F5F5F5; transition: 0.3s; }
+
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll; /* prevents issues on mobile */
+      }
+      nav ul {
+        display: none; flex-direction: column;
+        position: absolute; top: 60px; right: 0;
+        background: rgba(13, 17, 23, 0.95);
+        width: 200px; padding: 1rem; border-radius: 10px;
+      }
+      nav ul.active { display: flex; }
+      .hamburger { display: flex; }
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 4rem 2rem; text-align: center;
+      background: rgba(26, 46, 37, 0.9);
+      border-radius: 15px; max-width: 1200px; margin: 2rem auto;
+      box-shadow: 0 0 20px rgba(0,255,132,0.2);
+    }
+    .contact h2 { color: #00FF84; margin-bottom: 1rem; font-size: 2rem; }
+    .contact p { color: #A9A9A9; margin-bottom: 2rem; }
+
+    .contact-container {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem; max-width: 1000px; margin: 0 auto;
+    }
+
+    .contact-form, .contact-info {
+      background: rgba(13, 17, 23, 0.95);
+      padding: 2rem; border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,132,0.2);
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.8rem; margin-bottom: 1rem;
+      border: none; border-radius: 5px;
+      background: #1A2E25; color: #F5F5F5; font-size: 0.95rem;
+    }
+    .contact-form button {
+      background: #00FF84; color: #0D1117;
+      border: none; padding: 0.8rem 1.5rem;
+      border-radius: 5px; font-weight: bold;
+      width: 100%; cursor: pointer; transition: 0.3s;
+    }
+    .contact-form button:hover { background: #00cc6a; }
+
+    .contact-info h3 { color: #00FF84; margin-bottom: 1rem; }
+    .contact-info p { margin-bottom: 1rem; }
+
+    /* Social Icons */
+    .social-icons { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    .social-icons a {
+      width: 42px; height: 42px; display: flex; justify-content: center; align-items: center;
+      border-radius: 50%; background: #1A2E25;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .social-icons a img { width: 22px; height: 22px; }
+
+    /* Brand Colors on Hover */
+    .social-icons a.facebook:hover { background: #1877F2; }
+    .social-icons a.instagram:hover { 
+      background: radial-gradient(circle at 30% 30%, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    }
+    .social-icons a.whatsapp:hover { background: #25D366; }
+
+    /* Footer */
+    footer {
+      background: rgba(13, 17, 23, 0.95);
+      text-align: center; padding: 1rem; border-top: 1px solid #1A2E25; margin-top: 2rem;
+    }
+    footer p { color: #A9A9A9; font-size: 0.9rem; }
+
+    @media (max-width: 480px) {
+      .contact { padding: 2rem 1rem; }
+      .social-icons { justify-content: center; }
+      .contact-form button { padding: 1rem; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Company Logo">
+      <span>
+        Significant Engineering <br> Designing Company
+      </span>
+    </div>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        <div></div><div></div><div></div>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>We would love to hear from you! Get in touch with us using the form below or via our contact details.</p>
+
+    <div class="contact-container">
+      <!-- Form -->
+      <div class="contact-form">
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your Full Name" required>
+          <input type="email" name="email" placeholder="Your Email Address" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      <!-- Info -->
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p><strong>Address:</strong> 123 Engineering Street, Innovation City, NG</p>
+        <p><strong>Phone:</strong> +234 812 345 6789</p>
+        <p><strong>Email:</strong> info@significantengineering.com</p>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/profile.php?id=61579199656924" target="_blank" class="facebook">
+            <img src="assets/images/facebook.png" alt="Facebook">
+          </a>
+          <a href="https://instagram.com/significant_engineering_design" target="_blank" class="instagram">
+            <img src="assets/images/instagram.png" alt="Instagram">
+          </a>
+          <a href="https://wa.me/2348123456789" target="_blank" class="whatsapp">
+            <img src="assets/images/whatsapp.png" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Significant Engineering Designing Company. All rights reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>
