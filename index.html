@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Significant Engineering Designing Company</title>
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     /* ========= Reset ========= */
@@ -224,27 +226,6 @@
       padding: 2rem;
     }
     footer p{ color: var(--muted); margin-bottom: 1rem; }
-    .social-icons{ display: flex; justify-content: center; gap: 1.2rem; }
-    .social-icons a{
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      transition: transform .25s, box-shadow .25s;
-    }
-    .social-icons a img{ width: 24px; height: 24px; }
-    .social-icons a.facebook { background: #1877F2; }
-    .social-icons a.instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
-        #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    }
-    .social-icons a.whatsapp { background: #25D366; }
-    .social-icons a:hover{
-      transform: scale(1.15);
-      box-shadow: 0 0 12px rgba(255,255,255,0.4);
-    }
 
     /* ========= Responsive ========= */
     @media (max-width: 768px){
@@ -349,15 +330,26 @@
   <!-- ===== Footer ===== -->
   <footer>
     <p>&copy; 2025 Significant Engineering Designing Company. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="https://facebook.com/profile.php?id=61579199656924" target="_blank" aria-label="Facebook" class="facebook">
-        <img src="assets/images/facebook.png" alt="Facebook">
+    <div style="display:flex; justify-content:center; gap:20px;">
+      <a href="https://facebook.com/profile.php?id=61579199656924" target="_blank" 
+         style="display:inline-flex; align-items:center; justify-content:center; width:50px; height:50px; border-radius:50%; background:#fff; color:#000; font-size:24px; text-decoration:none;"
+         onmouseover="this.style.background='#000'; this.style.color='#fff';" 
+         onmouseout="this.style.background='#fff'; this.style.color='#000';">
+        <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="https://instagram.com/significant_engineering_design?igsh=MXBobWtwbmk2N2w4dw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram" class="instagram">
-        <img src="assets/images/instagram.png" alt="Instagram">
+
+      <a href="https://twitter.com" target="_blank" 
+         style="display:inline-flex; align-items:center; justify-content:center; width:50px; height:50px; border-radius:50%; background:#fff; color:#000; font-size:24px; text-decoration:none;"
+         onmouseover="this.style.background='#000'; this.style.color='#fff';" 
+         onmouseout="this.style.background='#fff'; this.style.color='#000';">
+        <i class="fab fa-x-twitter"></i>
       </a>
-      <a href="https://wa.me/2348012345678" target="_blank" aria-label="WhatsApp"class="whatsapp">
-        <img src="assets/images/whatsapp.png" alt="WhatsApp">
+
+      <a href="https://instagram.com/significant_engineering_design?igsh=MXBobWtwbmk2N2w4dw%3D%3D&utm_source=qr" target="_blank" 
+         style="display:inline-flex; align-items:center; justify-content:center; width:50px; height:50px; border-radius:50%; background:#fff; color:#000; font-size:24px; text-decoration:none;"
+         onmouseover="this.style.background='#000'; this.style.color='#fff';" 
+         onmouseout="this.style.background='#fff'; this.style.color='#000';">
+        <i class="fab fa-instagram"></i>
       </a>
     </div>
   </footer>
